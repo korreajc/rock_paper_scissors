@@ -1,0 +1,56 @@
+<DOCTYPE! html>
+<html>
+
+<script>
+
+const playerChoice = () => {
+
+let playerSelection = prompt('Choose: Rock, Paper, Scissors');
+
+return playerSelection;
+}
+
+function computerPlay(){
+
+var things = ['Rock', 'Paper', 'Scissors'];
+var thing = things[Math.floor(Math.random()*things.length)];
+return thing;
+
+}
+
+
+function playRound(playerSelection, computerSelection){
+
+
+if(playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() === 'paper'){ 
+  console.log('You lose! Paper beats rock.')
+} else if(playerSelection.toLowerCase() === 'rock' && computerSelection.toLowerCase() === 'scissors'){ 
+  console.log('You win! Rock beats scissors.')
+} else if(playerSelection.toLowerCase() === computerSelection.toLowerCase()){
+  console.log('Tie! Go again.')
+} else if(playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() === 'scissors'){ 
+  console.log('You lose! Scissors beats paper.')
+} else if(playerSelection.toLowerCase() === 'paper' && computerSelection.toLowerCase() === 'rock'){
+  console.log('You win! Paper beats rock!')
+} else if(playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'rock'){ 
+  console.log('You lose! Rock beats scissors.')
+} else if(playerSelection.toLowerCase() === 'scissors' && computerSelection.toLowerCase() === 'paper'){
+  console.log('You win! Scissors beats paper.')
+}else {
+  console.log('Invalid input. Try again.')
+
+}
+
+}
+
+
+const playerSel = playerChoice();
+const computerSel = computerPlay();
+console.log(playRound(playerSel, computerSel))
+
+
+
+</script>
+
+
+</html>
